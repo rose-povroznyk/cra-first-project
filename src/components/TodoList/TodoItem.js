@@ -1,14 +1,25 @@
-/*
+function Li(props) {
+  const renderLi = () => {
+    const { todoList } = props;
+    const clickHandler = (taskIDtoRemove) => {
+      props.callbackBtn(taskIDtoRemove);
+    };
 
-function компонента для айтема (лі з текстом + кнопкою)
+    return todoList.map((task) => (
+      <li key={task.id}>
+        {task.text}
+        <button
+          onClick={() => {
+            clickHandler(task.id);
+          }}
+        >
+          X
+        </button>
+      </li>
+    ));
+  };
 
-За натисненням на кнопку лі зникає з екрану
+  return renderLi();
+}
 
-
-1. Зробити функціональну компоненту.
-2. Винести в цю функцінальну компоненту <li>
-3. Переписати логіку відмальування лішки так, що дані тепер будуть спускатись від батька через пропси
-4. Зробити колбек в батьківського елемента, який має отримати id на вхід та видалити зі стейта елемент з такми id
-5. В компоненті TodoItem зробити виклик колбека і передати йому id (за нтиснення на кнопку)
-
-*/
+export default Li;

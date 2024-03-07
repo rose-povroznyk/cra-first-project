@@ -5,6 +5,4 @@ import TodoList from './components/TodoList/TodoList';
 import Scene from './components/Scene/Scene';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <TodoList />
-);
+root.render(<TodoList />);
