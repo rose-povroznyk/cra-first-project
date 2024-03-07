@@ -13,10 +13,23 @@ class TodoList extends React.Component {
         }
     }
 
+    removeTask(taskIDtoRemove) {
+        const { todoList } = this.state;
+
+        const filteredArray = todoList.filter(task => task.id !== taskIDtoRemove);
+
+        this.setState({
+            todoList: filteredArray
+        });
+    }
+
     renderLi() {
         const { todoList } = this.state;
 
-        return todoList.map((task) => <li key={task.id}>{task.text}</li>);
+        return todoList.map((task) => <li key={task.id}>
+                {task.text}
+                <button onClick={() => {this.removeTask(task.id)}}>X</button>
+            </li>);
     }
 
     render() {
@@ -60,9 +73,9 @@ export default TodoList;
 </ul>
 
 
-Задача 2 (***)
+Задача 2 (***) - DONE
 
-В кожній li зробити кнопку, за натисненням на яку цей елемент списку має зникнути (реалізувати видалення завдання)
++ В кожній li зробити кнопку, за натисненням на яку цей елемент списку має зникнути (реалізувати видалення завдання)
 (тобто оновити стейт таким чином, щоб в масиві з рядками або об'єктами не було того, який пов'язаний з кнопкою)
 
 */
