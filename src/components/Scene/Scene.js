@@ -36,10 +36,7 @@ export default Scene;
 /*
 
 Parent -> Child - props
-Child -> Parent - callback
-
-
-callback pattern
-
+Child -> Parent - callback pattern
+Child -> Child (Siblings) - Parent
 
 */
