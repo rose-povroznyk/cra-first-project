@@ -4,7 +4,9 @@ import ReactDOM from 'react-dom/client';
 // import TodoList from './components/TodoList/TodoList';
 // import Scene from './components/Scene/Scene';
 // import Counter from './components/Counter/Counter';
-import CounterPage from './components/Counter/CounterPage';
+// import CounterPage from './components/Counter/CounterPage';
+import UserList from './components/UserList/UserList';
+import App from './components/App.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<CounterPage />);
+root.render(<App />);

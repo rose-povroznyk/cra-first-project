@@ -1,0 +1,28 @@
+.form-wrapper {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px maroon;
+  padding: 10px;
+}
+
+.form-wrapper label {
+  margin-bottom: 5px;
+}
+
+.form-wrapper input {
+  width: 100%;
+  /* box-shadow: 0 0 5px maroon; */
+}
+
+.form-wrapper button {
+  margin-top: 5px;
+}
+
+.invalid {
+  border: 2px solid red;
+}
+
+.valid {
+  border: 2px solid green;
+}
