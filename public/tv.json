@@ -1,0 +1,6 @@
+[
+  { "brand": "LG", "model": "1", "price": "1000$" },
+  { "brand": "Samsung", "model": "2", "price": "900$" },
+  { "brand": "Samsung", "model": "3", "price": "1500$" },
+  { "brand": "LG", "model": "4", "price": "800$" }
+]
