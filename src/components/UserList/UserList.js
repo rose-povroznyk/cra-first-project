@@ -158,7 +158,7 @@ class UserList extends React.Component {
   };
 
   render() {
-    const { users, isLoading, isError } = this.state;
+    const { users, isLoading, isError, page } = this.state;
 
     return (
       <>
@@ -189,7 +189,12 @@ class UserList extends React.Component {
         )}
         {isError && <h2>{isError.message}</h2>}
 
-        <button onClick={this.prevBtnHandler}>Previous page</button>
+        <button
+          disabled={page === 1 ? true : false}
+          onClick={this.prevBtnHandler}
+        >
+          Previous page
+        </button>
         <button onClick={this.nextBtnHandler}>Next page</button>
 
         <section className='card-container'>
