@@ -1,58 +1,29 @@
 import React, { Component } from 'react';
-import DataProvider from './DataProvider/DataProvider';
+import Tree from './Tree/Tree';
+import UserContext from '../contexts/userContext';
 
-function App() {
-  return (
-    <>
-      <DataProvider
-        loadData={() => {
-          return fetch('./phones.json').then((response) => response.json());
-        }}
-      >
-        {(state) => {
-          const { data, isLoading, isError } = state;
-          return (
-            <>
-              {isLoading && <div>Loading ...</div>}
-              {isError && <div>Error happening: {isError.message}</div>}
-              <ul>
-                {data.map((data, index) => (
-                  <li key={index}>
-                    Brand: {data.brand} --- Price: {data.price} --- Model:{' '}
-                    {data.model}
-                  </li>
-                ))}
-              </ul>
-            </>
-          );
-        }}
-      </DataProvider>
+class App extends Component {
+  constructor(props) {
+    super(props);
 
-      <DataProvider
-        loadData={() => {
-          return fetch('./tv.json').then((response) => response.json());
-        }}
-      >
-        {(state) => {
-          const { data, isLoading, isError } = state;
-          return (
-            <>
-              {isLoading && <div>Loading ...</div>}
-              {isError && <div>Error happening: {isError.message}</div>}
-              <ol>
-                {data.map((data, index) => (
-                  <li key={index}>
-                    Brand: {data.brand} --- Price: {data.price} --- Model:{' '}
-                    {data.model}
-                  </li>
-                ))}
-              </ol>
-            </>
-          );
-        }}
-      </DataProvider>
-    </>
-  );
+    this.state = {
+      user: {
+        firsName: 'John',
+        lastName: 'Soe',
+        email: 'sdlfk@gmail.com',
+        avatar: 'https://wallpapershome.ru/images/pages/pic_h/25298.jpeg',
+      },
+    };
+  }
+
+  render() {
+    console.log(UserContext);
+    return (
+      <UserContext.Provider value={this.state.user}>
+        <Tree />
+      </UserContext.Provider>
+    );
+  }
 }
 
 export default App;
