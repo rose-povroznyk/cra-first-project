@@ -1,13 +1,23 @@
 import React from 'react';
 import InnerChild from './InnerChild/InnerChild';
+import UserContext from '../../../../../contexts/userContext';
 
-const Child = (props) => {
+const Child = () => {
   return (
-    <div style={{ border: '3px solid black', padding: '25px' }}>
-      {' '}
-      Child
-      <InnerChild />
-    </div>
+    <UserContext.Consumer>
+      {({ user: { avatar, firsName } }) => {
+        return (
+          <div>
+            <img
+              src={avatar}
+              style={{ width: '150px', height: '300px', objectFit: 'cover' }}
+            />
+            Child {firsName}
+            <InnerChild />
+          </div>
+        );
+      }}
+    </UserContext.Consumer>
   );
 };
 

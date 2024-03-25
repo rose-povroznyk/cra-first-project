@@ -1,25 +1,18 @@
 import React from 'react';
-import UserContext from '../../../../../../contexts/userContext';
+import { withUser } from '../../../../HOC';
 
 const InnerChild = (props) => {
+  const { user, logOut } = props;
+  const { firsName, lastName, email } = user;
   return (
-    <UserContext.Consumer>
-      {({ firsName, lastName, avatar, email }) => {
-        return (
-          <div style={{ border: '3px solid black', padding: '25px' }}>
-            I am inner child
-            <img
-              src={avatar}
-              style={{ width: '150px', height: '300px', objectFit: 'cover' }}
-            />
-            <p>
-              {firsName} {lastName} {email}
-            </p>
-          </div>
-        );
-      }}
-    </UserContext.Consumer>
+    <div>
+      I am inner child
+      <p>
+        {firsName} {lastName} {email}
+      </p>
+      <button onClick={logOut}>Log out</button>
+    </div>
   );
 };
 
-export default InnerChild;
+export default withUser(InnerChild);
