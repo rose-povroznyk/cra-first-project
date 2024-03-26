@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import SignUpForm from './LoginForm/LoginForm';
-import FormIn from './FormIn/FormIn';
-import NewCounter from './NewCounter/NewCounter';
-import NewCounterFn from './NewCounter/NewCounterFn';
+import NewUserList from './UserList/NewUserList';
 
 class App extends Component {
   constructor(props) {
@@ -10,12 +7,9 @@ class App extends Component {
 
     this.state = {};
   }
-  rerender = () => {
-    this.forceUpdate();
-  };
 
   render() {
-    return <NewCounterFn rerender={this.rerender} />;
+    return <NewUserList />;
   }
 }
 
