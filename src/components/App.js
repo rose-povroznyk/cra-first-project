@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
-import NewUserList from './UserList/NewUserList';
+import Tree from './Tree/Tree';
+import { ThemeContext } from '../contexts/themeContext';
+import UserContext from '../contexts/userContext';
+import CONSTANTS from '../constants';
+import Square from './Square/Square';
+import InputRef from './InputRef/InputRef';
+
+const { THEMES } = CONSTANTS;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
   render() {
-    return <NewUserList />;
+    return (
+      <>
+        <InputRef />
+      </>
+    );
   }
 }
 
