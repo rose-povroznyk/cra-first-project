@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Clicker from './SandboxComponent/Clicker';
+import TVLoader from './TVLoader/TVLoader';
 
 class App extends Component {
   render() {
     return (
       <>
-        <Clicker />
+        <TVLoader />
       </>
     );
   }
